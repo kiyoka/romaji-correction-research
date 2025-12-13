@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(git clone:*)",
+      "Bash(curl:*)",
+      "Bash(gunzip:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
