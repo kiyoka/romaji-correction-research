@@ -2,7 +2,7 @@
   {
     "id": 1,
     "typo": "srigatou",
-    "correct": "arigatou",
+    "correct": "ありがとう",
     "japanese": "ありがとう",
     "category": "substitution",
     "description": "a→s",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "typo": "arigatoi",
-    "correct": "arigatou",
+    "correct": "ありがとう",
     "japanese": "ありがとう",
     "category": "substitution",
     "description": "u→i",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "typo": "kawsii",
-    "correct": "kawaii",
+    "correct": "かわいい",
     "japanese": "かわいい",
     "category": "substitution",
     "description": "a→s",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "typo": "onegiashimasu",
-    "correct": "onegaishimasu",
+    "correct": "お願いします",
     "japanese": "お願いします",
     "category": "transposition",
     "description": "文字順入れ替え",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "typo": "konichiwa",
-    "correct": "konnichiwa",
+    "correct": "こんにちは",
     "japanese": "こんにちは",
     "category": "deletion",
     "description": "n脱落",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "typo": "arigatouu",
-    "correct": "arigatou",
+    "correct": "ありがとう",
     "japanese": "ありがとう",
     "category": "insertion",
     "description": "u重複",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "typo": "konniciha",
-    "correct": "konnichiwa",
+    "correct": "こんにちは",
     "japanese": "こんにちは",
     "category": "transposition",
     "description": "h-i入れ替え",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "typo": "srigtou",
-    "correct": "arigatou",
+    "correct": "ありがとう",
     "japanese": "ありがとう",
     "category": "complex",
     "description": "a→s + a脱落",
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "typo": "tanoshu",
-    "correct": "tanoshii",
+    "correct": "たのしい",
     "japanese": "たのしい",
     "category": "substitution",
     "description": "i→u",
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "typo": "gwnki",
-    "correct": "genki",
+    "correct": "げんき",
     "japanese": "げんき",
     "category": "substitution",
     "description": "e→w",

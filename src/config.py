@@ -18,7 +18,7 @@ VIRTUAL_TYPOS_FILE = DATA_DIR / "virtual_typos.json"
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_MODEL = "gpt-4"  # Using GPT-4 as GPT-5.2 may not be available yet
+OPENAI_MODEL = "gpt-5.2"  # GPT-5.2 for improved accuracy
 
 # Create results directory if it doesn't exist
 RESULTS_DIR.mkdir(exist_ok=True)

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "typo": "kanselshimazu",
-    "correct": "kyanserushimasu",
+    "correct": "キャンセルします",
     "japanese": "キャンセルします",
     "category": "substitution+deletion",
     "description": "s→z,y抜け",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "typo": "sousimazu",
-    "correct": "sousimasu",
+    "correct": "そうします",
     "japanese": "そうします",
     "category": "substitution",
     "description": "s→z",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "typo": "roukaidesu",
-    "correct": "ryoukaidesu",
+    "correct": "了解です",
     "japanese": "了解です",
     "category": "deletion",
     "description": "y抜け",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "typo": "okdesu",
-    "correct": "okkeidesu",
+    "correct": "OKです",
     "japanese": "OKです",
     "category": "omission",
     "description": "省略した入力",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "typo": "daijyobudesu",
-    "correct": "daijyoubudesu",
+    "correct": "大丈夫です",
     "japanese": "大丈夫です",
     "category": "deletion",
     "description": "u抜け",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "typo": "gwnnki",
-    "correct": "genki",
+    "correct": "元気",
     "japanese": "元気",
     "category": "substitution",
     "description": "e→w",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "typo": "mattetekudadai",
-    "correct": "mattetekudasai",
+    "correct": "待っててください",
     "japanese": "待っててください",
     "category": "substitution",
     "description": "s→d",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "typo": "shinkanswn",
-    "correct": "shinkansen",
+    "correct": "新幹線",
     "japanese": "新幹線",
     "category": "substitution",
     "description": "s→d",

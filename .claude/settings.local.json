@@ -6,7 +6,9 @@
       "Bash(curl:*)",
       "Bash(gunzip:*)",
       "Bash(python3:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:cookbook.openai.com)"
     ]
   }
 }

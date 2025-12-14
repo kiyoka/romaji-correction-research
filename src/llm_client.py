@@ -30,18 +30,34 @@ class TypoCorrectionClient:
             # Format the prompt with the typo text
             prompt = prompt_template.format(typo=typo_text)
 
-            # Call OpenAI API
-            response = self.client.chat.completions.create(
+            # Call OpenAI Responses API with GPT-5.2
+            response = self.client.responses.create(
                 model=self.model,
-                messages=[
+                input=[
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0,  # Deterministic output for consistency
-                max_tokens=50,  # Keep response short for speed
+                reasoning={
+                    "effort": "low",      # Match azooKey settings
+                    "summary": "concise"  # Match azooKey settings
+                }
             )
 
-            # Extract the corrected text
-            corrected = response.choices[0].message.content.strip()
+            # Extract the corrected text from response output
+            corrected = ""
+            if response.output is not None:
+                for item in response.output:
+                    # Skip reasoning items (they have content=None)
+                    if hasattr(item, "content") and item.content is not None:
+                        for content in item.content:
+                            if hasattr(content, "text"):
+                                corrected += content.text
+
+            corrected = corrected.strip()
+
+            # If no text was extracted, raise an error with response details
+            if not corrected:
+                error_msg = f"No text extracted from response. Response output: {response.output}"
+                raise ValueError(error_msg)
 
             # Calculate response time
             response_time = time.time() - start_time
