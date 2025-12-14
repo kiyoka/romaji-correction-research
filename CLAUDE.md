@@ -53,31 +53,31 @@
 
 #### タイプミス具体例データ(実データ)
 
-| タイプミス     | 正解の入力      | 正解日本語       | azookeyの結果(修正機能なし) | 説明         |
-|----------------|-----------------|------------------|-----------------------------|--------------|
-| kanselshimazu  | kyanserushimasu | キャンセルします | カンセル島ず                | s→z,y抜け    |
-| sousimazu      | sousimasu       | そうします       | 創始まず                    | s→z          |
-| roukaidesu     | ryoukaidesu     | 了解です         | ろうかいです                | y抜け        |
-| okdesu         | okkeidesu       | OKです           | おkです                     | 省略した入力 |
-| daijyobudesu   | daijyoubudesu   | 大丈夫です       | だいじょぶです              | u抜け        |
-| gwnnki         | genki           | 元気             | gwんき                      | e→w          |
-| mattetekudadai | mattetekudasai  | 待っててください | 待っててくだだい            | s→d          |
-| shinkanswn     | shinkansen      | 新幹線           | 新刊swn                     | s→d          |
+| タイプミス     | 正解の入力      | 正解日本語1      | 正解日本語2  | azookeyの結果(修正機能なし) | 説明         |
+|----------------|-----------------|------------------|--------------|-----------------------------|--------------|
+| kanserushimazu  | kyanserushimasu | キャンセルします |              | カンセル島ず                | s→z,y抜け    |
+| sousimazu      | sousimasu       | そうします       |              | 創始まず                    | s→z          |
+| roukaidesu     | ryoukaidesu     | 了解です         | 廊下です     | ろうかいです                | y抜け        |
+| okdesu         | okkeidesu       | OKです           | オッケーです | おkです                     | 省略した入力 |
+| daijyobudesu   | daijyoubudesu   | 大丈夫です       | 大丈夫です   | だいじょぶです              | u抜け        |
+| gwnnki         | genki           | 元気             | げんき       | gwんき                      | e→w          |
+| mattetekudadai | mattetekudasai  | 待っててください |              | 待っててくだだい            | s→d          |
+| shinkanswn     | shinkansen      | 新幹線           |              | 新刊swn                     | s→d          |
 
 #### タイプミス具体例データ(仮想データ、下のOpus 4.5によるものから作成)
 
-| タイプミス    | 正解の入力    | 正解日本語   | azookeyの結果(修正機能無し) | 説明           |
-|---------------|---------------|--------------|---------------------------|----------------|
-| srigatou      | arigatou      | ありがとう   | サリが当                    | a→s            |
-| arigatoi      | arigatou      | ありがとう   | ありがとい                  | u→i            |
-| kawsii        | kawaii        | かわいい     | かwしい                     | a→s            |
-| onegiashimasu | onegaishimasu | お願いします | おねぎあします              | 文字順入れ替え |
-| konichiwa     | konnichiwa    | こんにちは   | こにちわ                    | n脱落          |
-| arigatouu     | arigatou      | ありがとう   | ありがとうう                | u重複          |
-| konniciha     | konnichiwa    | こんにちは   | 今イチは                  | h-i入れ替え    |
-| srigtou       | arigatou      | ありがとう   | sリg等                     | a→s + a脱落    |
-| tanoshu       | tanoshii      | たのしい     | たのしゅ                    | i→u            |
-| gwnki         | genki         | げんき       | gwんき                      | e→w            |
+| タイプミス    | 正解の入力    | 正解日本語1  | 正解日本語1    | azookeyの結果(修正機能無し) | 説明           |
+|---------------|---------------|--------------|----------------|-----------------------------|----------------|
+| srigatou      | arigatou      | 有難う       | ありがとう     | サリが当                    | a→s            |
+| arigatoi      | arigatou      | 有難う       | ありがとう     | ありがとい                  | u→i            |
+| kawsii        | kawaii        | 可愛い       | かわいい       | かwしい                     | a→s            |
+| onegiashimasu | onegaishimasu | お願いします | おねがいします | おねぎあします              | 文字順入れ替え |
+| konichiwa     | konnichiwa    | こんにちは   |                | こにちわ                    | n脱落          |
+| arigatouu     | arigatou      | 有難う       | ありがとう     | ありがとうう                | u重複          |
+| konniciha     | konnichiwa    | こんにちは   |                | 今イチは                    | h-i入れ替え    |
+| srigtou       | arigatou      | 有難う       | ありがとう     | sリg等                      | a→s + a脱落    |
+| tanoshu       | tanoshii      | 楽しい       | たのしい       | たのしゅ                    | i→u            |
+| gwnki         | genki         | 元気         | げんき         | gwんき                      | e→w            |
 
 上記の表をタイプミス仮想データ(Claude Opus 4.5による)からいくつかサンプルを取得して追記してください。
 
