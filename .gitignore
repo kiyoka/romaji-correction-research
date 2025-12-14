@@ -1,2 +1,20 @@
 CLAUDE.md
 /github-typo-corpus
+
+# Python virtualenv
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+
+# Environment variables
+.env
+
+# Results
+results/
+*.csv
+*.log

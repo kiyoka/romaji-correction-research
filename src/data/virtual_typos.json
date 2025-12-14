@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "typo": "srigatou",
+    "correct": "arigatou",
+    "japanese": "ありがとう",
+    "category": "substitution",
+    "description": "a→s",
+    "source": "virtual"
+  },
+  {
+    "id": 2,
+    "typo": "arigatoi",
+    "correct": "arigatou",
+    "japanese": "ありがとう",
+    "category": "substitution",
+    "description": "u→i",
+    "source": "virtual"
+  },
+  {
+    "id": 3,
+    "typo": "kawsii",
+    "correct": "kawaii",
+    "japanese": "かわいい",
+    "category": "substitution",
+    "description": "a→s",
+    "source": "virtual"
+  },
+  {
+    "id": 4,
+    "typo": "onegiashimasu",
+    "correct": "onegaishimasu",
+    "japanese": "お願いします",
+    "category": "transposition",
+    "description": "文字順入れ替え",
+    "source": "virtual"
+  },
+  {
+    "id": 5,
+    "typo": "konichiwa",
+    "correct": "konnichiwa",
+    "japanese": "こんにちは",
+    "category": "deletion",
+    "description": "n脱落",
+    "source": "virtual"
+  },
+  {
+    "id": 6,
+    "typo": "arigatouu",
+    "correct": "arigatou",
+    "japanese": "ありがとう",
+    "category": "insertion",
+    "description": "u重複",
+    "source": "virtual"
+  },
+  {
+    "id": 7,
+    "typo": "konniciha",
+    "correct": "konnichiwa",
+    "japanese": "こんにちは",
+    "category": "transposition",
+    "description": "h-i入れ替え",
+    "source": "virtual"
+  },
+  {
+    "id": 8,
+    "typo": "srigtou",
+    "correct": "arigatou",
+    "japanese": "ありがとう",
+    "category": "complex",
+    "description": "a→s + a脱落",
+    "source": "virtual"
+  },
+  {
+    "id": 9,
+    "typo": "tanoshu",
+    "correct": "tanoshii",
+    "japanese": "たのしい",
+    "category": "substitution",
+    "description": "i→u",
+    "source": "virtual"
+  },
+  {
+    "id": 10,
+    "typo": "gwnki",
+    "correct": "genki",
+    "japanese": "げんき",
+    "category": "substitution",
+    "description": "e→w",
+    "source": "virtual"
+  }
+]

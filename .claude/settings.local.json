@@ -5,7 +5,8 @@
       "Bash(git clone:*)",
       "Bash(curl:*)",
       "Bash(gunzip:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(tree:*)"
     ]
   }
 }
