@@ -10,28 +10,43 @@ class TypoEvaluator:
         """Initialize the evaluator."""
         self.results = []
 
-    def evaluate_single(self, corrected: str, expected: str) -> dict:
+    def evaluate_single(self, corrected: str, expected1: str, expected2: str = "") -> dict:
         """
-        Evaluate a single correction result.
+        Evaluate a single correction result with multiple acceptable answers.
 
         Args:
             corrected: The corrected text from LLM
-            expected: The expected correct text
+            expected1: The first expected correct text
+            expected2: The second expected correct text (optional)
 
         Returns:
             dict with evaluation metrics
         """
-        # Exact match
-        exact_match = corrected.lower() == expected.lower()
+        # Check exact match against both expected values
+        exact_match1 = corrected.lower() == expected1.lower() if expected1 else False
+        exact_match2 = corrected.lower() == expected2.lower() if expected2 else False
+        exact_match = exact_match1 or exact_match2
 
-        # Levenshtein distance
-        edit_distance = Levenshtein.distance(corrected.lower(), expected.lower())
+        # Calculate Levenshtein distance to the closest expected value
+        if expected1 and expected2:
+            edit_distance1 = Levenshtein.distance(corrected.lower(), expected1.lower())
+            edit_distance2 = Levenshtein.distance(corrected.lower(), expected2.lower())
+            edit_distance = min(edit_distance1, edit_distance2)
+            matched_expected = expected1 if edit_distance1 <= edit_distance2 else expected2
+        elif expected1:
+            edit_distance = Levenshtein.distance(corrected.lower(), expected1.lower())
+            matched_expected = expected1
+        else:
+            edit_distance = 0
+            matched_expected = ""
 
         return {
             "exact_match": exact_match,
             "edit_distance": edit_distance,
             "corrected": corrected,
-            "expected": expected
+            "expected": matched_expected,
+            "expected1": expected1,
+            "expected2": expected2
         }
 
     def add_result(self, result: dict):

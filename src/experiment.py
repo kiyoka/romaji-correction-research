@@ -35,10 +35,17 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
 
     for i, case in enumerate(data, 1):
         typo = case['typo']
-        correct = case['correct']
+        correct1 = case.get('correct1', case.get('correct', ''))
+        correct2 = case.get('correct2', '')
         japanese = case['japanese']
 
-        print(f"\n[{i}/{len(data)}] Testing: {typo} → {correct} ({japanese})")
+        # Display expected values (show both if correct2 exists)
+        if correct2:
+            expected_display = f"{correct1} or {correct2}"
+        else:
+            expected_display = correct1
+
+        print(f"\n[{i}/{len(data)}] Testing: {typo} → {expected_display} ({japanese})")
 
         # Correct the typo using LLM
         response = client.correct_typo(typo, DEFAULT_PROMPT)
@@ -50,8 +57,8 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
         corrected = response['corrected']
         response_time = response['response_time']
 
-        # Evaluate the result
-        eval_result = evaluator.evaluate_single(corrected, correct)
+        # Evaluate the result with multiple acceptable answers
+        eval_result = evaluator.evaluate_single(corrected, correct1, correct2)
         eval_result['response_time'] = response_time
         eval_result['typo'] = typo
         eval_result['japanese'] = japanese
@@ -65,7 +72,7 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
         if eval_result['exact_match']:
             print(f"  ✓ Correct: {corrected} (time: {response_time:.2f}s)")
         else:
-            print(f"  ✗ Wrong: {corrected} (expected: {correct}, edit_distance: {eval_result['edit_distance']}, time: {response_time:.2f}s)")
+            print(f"  ✗ Wrong: {corrected} (expected: {expected_display}, edit_distance: {eval_result['edit_distance']}, time: {response_time:.2f}s)")
 
     return results
 
@@ -77,8 +84,8 @@ def save_results(all_results: list, stats: dict):
 
     # Write detailed results
     with open(csv_file, 'w', newline='', encoding='utf-8') as f:
-        fieldnames = ['dataset', 'typo', 'expected', 'corrected', 'japanese', 'category',
-                      'exact_match', 'edit_distance', 'response_time']
+        fieldnames = ['dataset', 'typo', 'expected', 'expected1', 'expected2', 'corrected',
+                      'japanese', 'category', 'exact_match', 'edit_distance', 'response_time']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(all_results)
