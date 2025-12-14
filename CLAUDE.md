@@ -65,13 +65,22 @@
 
 #### タイプミス具体例データ(仮想データ、下のOpus 4.5によるものから作成)
 
-| タイプミス    | 正解の入力    | 正解日本語     | azookeyの結果(修正機能無し) | 説明 |
-| srigatou      | arigatou      | ありがとう     | サリが当                    | a→s  |
-| arigatoi      | arigatou      | ありがとう     | ありがとい                  | u→i  |
-| kawsii        | kawaii        | かわいい       | かwしい                     | a→s  |
-| onegiashimasu | onegaishimasu | おねぎあします | 文字順入れ替え              |      |
+| タイプミス    | 正解の入力    | 正解日本語   | azookeyの結果(修正機能無し) | 説明           |
+|---------------|---------------|--------------|---------------------------|----------------|
+| srigatou      | arigatou      | ありがとう   | サリが当                    | a→s            |
+| arigatoi      | arigatou      | ありがとう   | ありがとい                  | u→i            |
+| kawsii        | kawaii        | かわいい     | かwしい                     | a→s            |
+| onegiashimasu | onegaishimasu | お願いします | おねぎあします              | 文字順入れ替え |
+| konichiwa     | konnichiwa    | こんにちは   | こにちわ                    | n脱落          |
+| arigatouu     | arigatou      | ありがとう   | ありがとうう                | u重複          |
+| konniciha     | konnichiwa    | こんにちは   | 今イチは                  | h-i入れ替え    |
+| srigtou       | arigatou      | ありがとう   | sリg等                     | a→s + a脱落    |
+| tanoshu       | tanoshii      | たのしい     | たのしゅ                    | i→u            |
+| gwnki         | genki         | げんき       | gwんき                      | e→w            |
 
-#### タイプミス仮想データ(Claude Opus 4.5による)
+上記の表をタイプミス仮想データ(Claude Opus 4.5による)からいくつかサンプルを取得して追記してください。
+
+#### タイプミス仮想データ(Claude Opus 4.5による生成)
 
 **カテゴリ1: Substitution（置換）- 隣接キー誤入力**
 
