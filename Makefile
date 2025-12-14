@@ -21,7 +21,7 @@ setup:
 
 run:
 	@echo "Running typo correction experiment..."
-	$(PYTHON) src/experiment.py
+	cd $(dir $(abspath $(lastword $(MAKEFILE_LIST)))) && PYTHONPATH=. $(PYTHON) src/experiment.py
 
 clean:
 	@echo "Cleaning up..."
