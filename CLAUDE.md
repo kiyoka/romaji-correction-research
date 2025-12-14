@@ -53,15 +53,16 @@
 
 #### タイプミス具体例データ(実データ)
 
-| タイプミス    | 正解の入力      | 正解日本語       | azookeyの結果(修正機能なし) | 説明         |
-|---------------|-----------------|------------------|-----------------------|--------------|
-| kanselshimazu | kyanserushimasu | キャンセルします | カンセル島ず          | s→z,y抜け    |
-| sousimazu     | sousimasu       | そうします       | 創始まず              | s→z          |
-| roukaidesu    | ryoukaidesu     | 了解です         | ろうかいです          | y抜け        |
-| okdesu        | okkeidesu       | OKです           | おkです               | 省略した入力 |
-| daijyobudesu  | daijyoubudesu   | 大丈夫です       | だいじょぶです        | u抜け        |
-| gwnnki        | genki           | 元気             | gwんき                | e→w          |
-|               |                 |                |                     |              |
+| タイプミス     | 正解の入力      | 正解日本語       | azookeyの結果(修正機能なし) | 説明         |
+|----------------|-----------------|------------------|-----------------------------|--------------|
+| kanselshimazu  | kyanserushimasu | キャンセルします | カンセル島ず                | s→z,y抜け    |
+| sousimazu      | sousimasu       | そうします       | 創始まず                    | s→z          |
+| roukaidesu     | ryoukaidesu     | 了解です         | ろうかいです                | y抜け        |
+| okdesu         | okkeidesu       | OKです           | おkです                     | 省略した入力 |
+| daijyobudesu   | daijyoubudesu   | 大丈夫です       | だいじょぶです              | u抜け        |
+| gwnnki         | genki           | 元気             | gwんき                      | e→w          |
+| mattetekudadai | mattetekudasai  | 待っててください | 待っててくだだい            | s→d          |
+| shinkanswn     | shinkansen      | 新幹線           | 新刊swn                     | s→d          |
 
 #### タイプミス具体例データ(仮想データ、下のOpus 4.5によるものから作成)
 
