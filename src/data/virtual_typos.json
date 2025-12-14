@@ -2,7 +2,8 @@
   {
     "id": 1,
     "typo": "srigatou",
-    "correct": "ありがとう",
+    "correct1": "有難う",
+    "correct2": "ありがとう",
     "japanese": "ありがとう",
     "category": "substitution",
     "description": "a→s",
@@ -11,7 +12,8 @@
   {
     "id": 2,
     "typo": "arigatoi",
-    "correct": "ありがとう",
+    "correct1": "有難う",
+    "correct2": "ありがとう",
     "japanese": "ありがとう",
     "category": "substitution",
     "description": "u→i",
@@ -20,7 +22,8 @@
   {
     "id": 3,
     "typo": "kawsii",
-    "correct": "かわいい",
+    "correct1": "可愛い",
+    "correct2": "かわいい",
     "japanese": "かわいい",
     "category": "substitution",
     "description": "a→s",
@@ -29,7 +32,8 @@
   {
     "id": 4,
     "typo": "onegiashimasu",
-    "correct": "お願いします",
+    "correct1": "お願いします",
+    "correct2": "おねがいします",
     "japanese": "お願いします",
     "category": "transposition",
     "description": "文字順入れ替え",
@@ -38,7 +42,8 @@
   {
     "id": 5,
     "typo": "konichiwa",
-    "correct": "こんにちは",
+    "correct1": "こんにちは",
+    "correct2": "",
     "japanese": "こんにちは",
     "category": "deletion",
     "description": "n脱落",
@@ -47,7 +52,8 @@
   {
     "id": 6,
     "typo": "arigatouu",
-    "correct": "ありがとう",
+    "correct1": "有難う",
+    "correct2": "ありがとう",
     "japanese": "ありがとう",
     "category": "insertion",
     "description": "u重複",
@@ -56,7 +62,8 @@
   {
     "id": 7,
     "typo": "konniciha",
-    "correct": "こんにちは",
+    "correct1": "こんにちは",
+    "correct2": "",
     "japanese": "こんにちは",
     "category": "transposition",
     "description": "h-i入れ替え",
@@ -65,7 +72,8 @@
   {
     "id": 8,
     "typo": "srigtou",
-    "correct": "ありがとう",
+    "correct1": "有難う",
+    "correct2": "ありがとう",
     "japanese": "ありがとう",
     "category": "complex",
     "description": "a→s + a脱落",
@@ -74,7 +82,8 @@
   {
     "id": 9,
     "typo": "tanoshu",
-    "correct": "たのしい",
+    "correct1": "楽しい",
+    "correct2": "たのしい",
     "japanese": "たのしい",
     "category": "substitution",
     "description": "i→u",
@@ -83,7 +92,8 @@
   {
     "id": 10,
     "typo": "gwnki",
-    "correct": "げんき",
+    "correct1": "元気",
+    "correct2": "げんき",
     "japanese": "げんき",
     "category": "substitution",
     "description": "e→w",

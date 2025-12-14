@@ -18,3 +18,5 @@ __pycache__/
 results/
 *.csv
 *.log
+CLAUDE.md
+.\#CLAUDE.md

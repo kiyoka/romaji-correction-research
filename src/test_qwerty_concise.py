@@ -1,14 +1,14 @@
-"""Main experiment script for typo correction."""
+"""Test QWERTY_CONCISE prompt only."""
 
 import json
-import csv
 from datetime import datetime
 from pathlib import Path
+import csv
 
 from src.config import REAL_TYPOS_FILE, VIRTUAL_TYPOS_FILE, RESULTS_DIR
 from src.llm_client import TypoCorrectionClient
 from src.evaluator import TypoEvaluator
-from src.prompts.templates import DEFAULT_PROMPT
+from src.prompts.templates import QWERTY_CONCISE_PROMPT
 
 
 def load_typo_data(file_path: Path) -> list:
@@ -18,15 +18,7 @@ def load_typo_data(file_path: Path) -> list:
 
 
 def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, evaluator: TypoEvaluator):
-    """
-    Run the typo correction experiment on a dataset.
-
-    Args:
-        data: List of typo cases
-        dataset_name: Name of the dataset (for display)
-        client: LLM client for correction
-        evaluator: Evaluator for metrics
-    """
+    """Run the typo correction experiment on a dataset."""
     print(f"\n{'='*60}")
     print(f"Testing on {dataset_name}")
     print(f"{'='*60}")
@@ -39,7 +31,7 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
         correct2 = case.get('correct2', '')
         japanese = case['japanese']
 
-        # Display expected values (show both if correct2 exists)
+        # Display expected values
         if correct2:
             expected_display = f"{correct1} or {correct2}"
         else:
@@ -47,8 +39,8 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
 
         print(f"\n[{i}/{len(data)}] Testing: {typo} → {expected_display} ({japanese})")
 
-        # Correct the typo using LLM
-        response = client.correct_typo(typo, DEFAULT_PROMPT)
+        # Correct the typo using LLM with QWERTY_CONCISE_PROMPT
+        response = client.correct_typo(typo, QWERTY_CONCISE_PROMPT)
 
         if response['error']:
             print(f"  ✗ Error: {response['error']}")
@@ -80,7 +72,7 @@ def run_experiment(data: list, dataset_name: str, client: TypoCorrectionClient, 
 def save_results(all_results: list, stats: dict):
     """Save results to CSV file."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_file = RESULTS_DIR / f"experiment_results_{timestamp}.csv"
+    csv_file = RESULTS_DIR / f"qwerty_concise_results_{timestamp}.csv"
 
     # Write detailed results
     with open(csv_file, 'w', newline='', encoding='utf-8') as f:
@@ -93,10 +85,13 @@ def save_results(all_results: list, stats: dict):
     print(f"\n✓ Results saved to: {csv_file}")
 
     # Write summary statistics
-    summary_file = RESULTS_DIR / f"summary_{timestamp}.txt"
+    summary_file = RESULTS_DIR / f"qwerty_concise_summary_{timestamp}.txt"
     with open(summary_file, 'w', encoding='utf-8') as f:
         f.write("="*60 + "\n")
-        f.write("Typo Correction Experiment Summary\n")
+        f.write("QWERTY_CONCISE Prompt Test Results\n")
+        f.write("="*60 + "\n\n")
+        f.write("Prompt:\n")
+        f.write(QWERTY_CONCISE_PROMPT + "\n\n")
         f.write("="*60 + "\n\n")
         f.write(f"Total cases: {stats['total_cases']}\n")
         f.write(f"Exact match rate: {stats['exact_match_rate']:.2%}\n")
@@ -109,8 +104,12 @@ def save_results(all_results: list, stats: dict):
 def main():
     """Main function to run the experiment."""
     print("\n" + "="*60)
-    print("Typo Correction Experiment")
+    print("QWERTY_CONCISE Prompt Test")
     print("="*60)
+    print("\nPrompt:")
+    print("-" * 60)
+    print(QWERTY_CONCISE_PROMPT)
+    print("-" * 60)
 
     # Initialize client and evaluator
     client = TypoCorrectionClient()

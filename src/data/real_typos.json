@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "typo": "kanselshimazu",
-    "correct": "キャンセルします",
+    "typo": "kanserushimazu",
+    "correct1": "キャンセルします",
+    "correct2": "",
     "japanese": "キャンセルします",
     "category": "substitution+deletion",
     "description": "s→z,y抜け",
@@ -11,7 +12,8 @@
   {
     "id": 2,
     "typo": "sousimazu",
-    "correct": "そうします",
+    "correct1": "そうします",
+    "correct2": "",
     "japanese": "そうします",
     "category": "substitution",
     "description": "s→z",
@@ -20,7 +22,8 @@
   {
     "id": 3,
     "typo": "roukaidesu",
-    "correct": "了解です",
+    "correct1": "了解です",
+    "correct2": "廊下です",
     "japanese": "了解です",
     "category": "deletion",
     "description": "y抜け",
@@ -29,7 +32,8 @@
   {
     "id": 4,
     "typo": "okdesu",
-    "correct": "OKです",
+    "correct1": "OKです",
+    "correct2": "オッケーです",
     "japanese": "OKです",
     "category": "omission",
     "description": "省略した入力",
@@ -38,7 +42,8 @@
   {
     "id": 5,
     "typo": "daijyobudesu",
-    "correct": "大丈夫です",
+    "correct1": "大丈夫です",
+    "correct2": "だいじょうぶです",
     "japanese": "大丈夫です",
     "category": "deletion",
     "description": "u抜け",
@@ -47,7 +52,8 @@
   {
     "id": 6,
     "typo": "gwnnki",
-    "correct": "元気",
+    "correct1": "元気",
+    "correct2": "げんき",
     "japanese": "元気",
     "category": "substitution",
     "description": "e→w",
@@ -56,7 +62,8 @@
   {
     "id": 7,
     "typo": "mattetekudadai",
-    "correct": "待っててください",
+    "correct1": "待っててください",
+    "correct2": "",
     "japanese": "待っててください",
     "category": "substitution",
     "description": "s→d",
@@ -65,7 +72,8 @@
   {
     "id": 8,
     "typo": "shinkanswn",
-    "correct": "新幹線",
+    "correct1": "新幹線",
+    "correct2": "",
     "japanese": "新幹線",
     "category": "substitution",
     "description": "s→d",
