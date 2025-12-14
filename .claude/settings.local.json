@@ -8,7 +8,8 @@
       "Bash(python3:*)",
       "Bash(tree:*)",
       "WebFetch(domain:platform.openai.com)",
-      "WebFetch(domain:cookbook.openai.com)"
+      "WebFetch(domain:cookbook.openai.com)",
+      "Bash(ls:*)"
     ]
   }
 }
