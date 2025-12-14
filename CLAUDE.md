@@ -51,7 +51,27 @@
   - 順序入れ替え（`teh` → `the` 的なもの）
   - 長音・促音の入力ミス
 
-#### タイプミス具体例データ
+#### タイプミス具体例データ(実データ)
+
+| タイプミス    | 正解の入力      | 正解日本語       | azookeyの結果(修正機能なし) | 説明         |
+|---------------|-----------------|------------------|-----------------------|--------------|
+| kanselshimazu | kyanserushimasu | キャンセルします | カンセル島ず          | s→z,y抜け    |
+| sousimazu     | sousimasu       | そうします       | 創始まず              | s→z          |
+| roukaidesu    | ryoukaidesu     | 了解です         | ろうかいです          | y抜け        |
+| okdesu        | okkeidesu       | OKです           | おkです               | 省略した入力 |
+| daijyobudesu  | daijyoubudesu   | 大丈夫です       | だいじょぶです        | u抜け        |
+| gwnnki        | genki           | 元気             | gwんき                | e→w          |
+|               |                 |                |                     |              |
+
+#### タイプミス具体例データ(仮想データ、下のOpus 4.5によるものから作成)
+
+| タイプミス    | 正解の入力    | 正解日本語     | azookeyの結果(修正機能無し) | 説明 |
+| srigatou      | arigatou      | ありがとう     | サリが当                    | a→s  |
+| arigatoi      | arigatou      | ありがとう     | ありがとい                  | u→i  |
+| kawsii        | kawaii        | かわいい       | かwしい                     | a→s  |
+| onegiashimasu | onegaishimasu | おねぎあします | 文字順入れ替え              |      |
+
+#### タイプミス仮想データ(Claude Opus 4.5による)
 
 **カテゴリ1: Substitution（置換）- 隣接キー誤入力**
 
