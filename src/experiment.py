@@ -5,7 +5,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 
-from src.config import REAL_TYPOS_FILE, VIRTUAL_TYPOS_FILE, RESULTS_DIR
+from src.config import REAL_TYPOS_FILE, VIRTUAL_TYPOS_FILE, PROPER_NOUN_TYPOS_FILE, RESULTS_DIR
 from src.llm_client import TypoCorrectionClient
 from src.evaluator import TypoEvaluator
 from src.prompts.templates import DEFAULT_PROMPT
@@ -120,13 +120,16 @@ def main():
     print("\nLoading datasets...")
     real_data = load_typo_data(REAL_TYPOS_FILE)
     virtual_data = load_typo_data(VIRTUAL_TYPOS_FILE)
+    proper_noun_data = load_typo_data(PROPER_NOUN_TYPOS_FILE)
     print(f"✓ Loaded {len(real_data)} real cases")
     print(f"✓ Loaded {len(virtual_data)} virtual cases")
+    print(f"✓ Loaded {len(proper_noun_data)} proper noun cases")
 
     # Run experiments
     all_results = []
     all_results.extend(run_experiment(real_data, "Real Data", client, evaluator))
     all_results.extend(run_experiment(virtual_data, "Virtual Data", client, evaluator))
+    all_results.extend(run_experiment(proper_noun_data, "Proper Noun Data", client, evaluator))
 
     # Calculate and display statistics
     stats = evaluator.calculate_statistics()

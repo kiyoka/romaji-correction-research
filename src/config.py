@@ -15,6 +15,7 @@ RESULTS_DIR = PROJECT_ROOT / "results"
 # Data files
 REAL_TYPOS_FILE = DATA_DIR / "real_typos.json"
 VIRTUAL_TYPOS_FILE = DATA_DIR / "virtual_typos.json"
+PROPER_NOUN_TYPOS_FILE = DATA_DIR / "proper_noun_typos.json"
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")

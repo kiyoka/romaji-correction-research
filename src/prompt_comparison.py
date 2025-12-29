@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 import csv
 
-from src.config import REAL_TYPOS_FILE, VIRTUAL_TYPOS_FILE, RESULTS_DIR
+from src.config import REAL_TYPOS_FILE, VIRTUAL_TYPOS_FILE, PROPER_NOUN_TYPOS_FILE, RESULTS_DIR
 from src.llm_client import TypoCorrectionClient
 from src.evaluator import TypoEvaluator
 from src.prompts.templates import ALL_PROMPTS
@@ -108,9 +108,11 @@ def main():
     print("\nLoading datasets...")
     real_data = load_typo_data(REAL_TYPOS_FILE)
     virtual_data = load_typo_data(VIRTUAL_TYPOS_FILE)
-    all_data = real_data + virtual_data
+    proper_noun_data = load_typo_data(PROPER_NOUN_TYPOS_FILE)
+    all_data = real_data + virtual_data + proper_noun_data
     print(f"✓ Loaded {len(real_data)} real cases")
     print(f"✓ Loaded {len(virtual_data)} virtual cases")
+    print(f"✓ Loaded {len(proper_noun_data)} proper noun cases")
     print(f"Total: {len(all_data)} cases")
 
     # Initialize client

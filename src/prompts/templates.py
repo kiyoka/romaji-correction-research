@@ -41,8 +41,40 @@ QWERTY_CONCISE_PROMPT = """スマートフォンQWERTYキーボードでの誤�
 入力: {typo}
 日本語:"""
 
+# Proper noun aware prompt - handles brand names and technical terms correctly
+PROPER_NOUN_AWARE_PROMPT = """以下の入力を処理してください：
+- 日本語のローマ字入力の場合：タイプミスを修正して日本語（漢字仮名交じり）に変換
+- 企業名・ブランド名・技術用語の場合：正規の英語表記に修正（例：openai→OpenAI, github→GitHub, javascript→JavaScript）
+
+変換結果のみを返してください。
+
+入力: {typo}
+出力:"""
+
+# Proper noun aware prompt V2 - more explicit examples
+PROPER_NOUN_AWARE_V2_PROMPT = """以下のルールで入力を処理してください：
+
+1. 日本語のローマ字入力の場合：タイプミスを修正して日本語に変換
+   例：arigatou→ありがとう、konichiwa→こんにちは
+
+2. 固有名詞（企業名・ブランド名・技術用語）の場合：英語の正規表記に修正
+   例：openai→OpenAI、github→GitHub、iphone→iPhone、javascript→JavaScript
+
+変換結果のみを返してください。
+
+入力: {typo}
+出力:"""
+
+# Proper noun aware prompt V3 - concise with clear distinction
+PROPER_NOUN_AWARE_V3_PROMPT = """入力を以下のように処理：
+・日本語ローマ字→日本語に変換（例：arigatou→ありがとう）
+・固有名詞→正規の英語表記（例：openai→OpenAI、iphone→iPhone、javascript→JavaScript）
+
+入力: {typo}
+出力:"""
+
 # Default prompt to use
-DEFAULT_PROMPT = SIMPLE_V2
+DEFAULT_PROMPT = PROPER_NOUN_AWARE_V2_PROMPT
 
 # All prompts for comparison
 ALL_PROMPTS = {
@@ -52,4 +84,7 @@ ALL_PROMPTS = {
     "QWERTY_AWARE": QWERTY_AWARE_PROMPT,
     "QWERTY_DETAILED": QWERTY_DETAILED_PROMPT,
     "QWERTY_CONCISE": QWERTY_CONCISE_PROMPT,
+    "PROPER_NOUN_AWARE": PROPER_NOUN_AWARE_PROMPT,
+    "PROPER_NOUN_AWARE_V2": PROPER_NOUN_AWARE_V2_PROMPT,
+    "PROPER_NOUN_AWARE_V3": PROPER_NOUN_AWARE_V3_PROMPT,
 }
