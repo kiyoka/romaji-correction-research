@@ -50,6 +50,7 @@
   - 文字の重複・脱落
   - 順序入れ替え（`teh` → `the` 的なもの）
   - 長音・促音の入力ミス
+  - 固有名詞・ブランド名の正規化（`openai` → `OpenAI` 等）
 
 #### タイプミス具体例データ(実データ)
 
@@ -63,6 +64,8 @@
 | gwnnki         | genki           | 元気             | げんき       | gwんき                      | e→w          |
 | mattetekudadai | mattetekudasai  | 待っててください |              | 待っててくだだい            | s→d          |
 | shinkanswn     | shinkansen      | 新幹線           |              | 新刊swn                     | s→d          |
+| rykaidesu     | ryoukaidesu      | 了解です           |           | ry回です                 | o抜け          |
+
 
 #### タイプミス具体例データ(仮想データ、下のOpus 4.5によるものから作成)
 
@@ -159,6 +162,41 @@
 | tanosgii | tanoshii | たのしい | h→g + 順序 |
 | wakarimshta | wakarimashita | わかりました | a脱落 |
 | yoroshikuu | yoroshiku | よろしく | u重複 |
+
+**カテゴリ6: 固有名詞・ブランド名の正規化**
+
+| タイプミス | 正解 | 説明 | カテゴリ |
+|-----------|------|------|---------|
+| openai | OpenAI | 企業名の正規表記 | AI企業 |
+| github | GitHub | サービス名の正規表記 | 開発プラットフォーム |
+| iphone | iPhone | 製品名の正規表記 | Apple製品 |
+| ipad | iPad | 製品名の正規表記 | Apple製品 |
+| macbook | MacBook | 製品名の正規表記 | Apple製品 |
+| macos | macOS | OS名の正規表記 | Apple製品 |
+| ios | iOS | OS名の正規表記 | Apple製品 |
+| youtube | YouTube | サービス名の正規表記 | Google傘下 |
+| google | Google | 企業名の正規表記 | テック企業 |
+| microsoft | Microsoft | 企業名の正規表記 | テック企業 |
+| windows | Windows | OS名の正規表記 | Microsoft製品 |
+| facebook | Facebook | サービス名の正規表記 | Meta傘下 |
+| instagram | Instagram | サービス名の正規表記 | Meta傘下 |
+| twitter | Twitter | サービス名の正規表記 | ソーシャルメディア |
+| linkedin | LinkedIn | サービス名の正規表記 | ソーシャルメディア |
+| amazon | Amazon | 企業名の正規表記 | テック企業 |
+| android | Android | OS名の正規表記 | Google製品 |
+| linux | Linux | OS名の正規表記 | オープンソース |
+| javascript | JavaScript | プログラミング言語名 | 言語名 |
+| typescript | TypeScript | プログラミング言語名 | 言語名 |
+| python | Python | プログラミング言語名 | 言語名 |
+| mysql | MySQL | データベース名 | データベース |
+| postgresql | PostgreSQL | データベース名 | データベース |
+| mongodb | MongoDB | データベース名 | データベース |
+
+> **注釈**:
+> - 固有名詞やブランド名は正式な大文字小文字表記（キャメルケース、パスカルケースなど）を持つ
+> - ユーザーが小文字で入力しても、正規表記に修正することで可読性と正確性が向上
+> - 特にドキュメントやビジネス文書では、正式な表記を使用することが重要
+> - プログラミング言語名やデータベース名も正規表記がある（例：JavaScript、PostgreSQL）
 
 > **注意: 上記のタイプミス具体例は論文から引用したものではありません。**
 >
