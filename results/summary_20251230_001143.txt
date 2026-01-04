@@ -1,0 +1,8 @@
+============================================================
+Typo Correction Experiment Summary
+============================================================
+
+Total cases: 42
+Exact match rate: 97.62%
+Average edit distance: 0.14
+Average response time: 1.45s

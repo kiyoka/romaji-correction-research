@@ -1,0 +1,43 @@
+dataset,typo,expected,expected1,expected2,corrected,japanese,category,exact_match,edit_distance,response_time
+Real Data,kanserushimazu,キャンセルします,キャンセルします,,キャンセルします,キャンセルします,substitution+deletion,True,0,2.6821041107177734
+Real Data,sousimazu,そうします,そうします,,そうします,そうします,substitution,True,0,2.2291619777679443
+Real Data,roukaidesu,了解です,了解です,廊下です,了解です,了解です,deletion,True,0,1.4597909450531006
+Real Data,okdesu,OKです,OKです,オッケーです,OKです,OKです,omission,True,0,2.0934760570526123
+Real Data,daijyobudesu,だいじょうぶです,大丈夫です,だいじょうぶです,だいじょうぶです,大丈夫です,deletion,True,0,1.0545120239257812
+Real Data,gwnnki,げんき,元気,げんき,げんき,元気,substitution,True,0,2.6919338703155518
+Real Data,mattetekudadai,待っててください,待っててください,,待っててください,待っててください,substitution,True,0,2.4446489810943604
+Real Data,shinkanswn,新幹線,新幹線,,しんかんせん,新幹線,substitution,False,6,3.0822913646698
+Virtual Data,srigatou,ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,1.4327781200408936
+Virtual Data,arigatoi,ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,1.126037836074829
+Virtual Data,kawsii,かわいい,可愛い,かわいい,かわいい,かわいい,substitution,True,0,1.6160480976104736
+Virtual Data,onegiashimasu,お願いします,お願いします,おねがいします,お願いします,お願いします,transposition,True,0,1.560244083404541
+Virtual Data,konichiwa,こんにちは,こんにちは,,こんにちは,こんにちは,deletion,True,0,0.7728080749511719
+Virtual Data,arigatouu,ありがとう,有難う,ありがとう,ありがとう,ありがとう,insertion,True,0,0.8633930683135986
+Virtual Data,konniciha,こんにちは,こんにちは,,こんにちは,こんにちは,transposition,True,0,0.9725778102874756
+Virtual Data,srigtou,ありがとう,有難う,ありがとう,ありがとう,ありがとう,complex,True,0,1.4386229515075684
+Virtual Data,tanoshu,たのしい,楽しい,たのしい,たのしい,たのしい,substitution,True,0,4.243381023406982
+Virtual Data,gwnki,げんき,元気,げんき,げんき,げんき,substitution,True,0,1.8475282192230225
+Proper Noun Data,openai,OpenAI,OpenAI,,OpenAI,,proper_noun_normalization,True,0,0.9176249504089355
+Proper Noun Data,github,GitHub,GitHub,,GitHub,,proper_noun_normalization,True,0,0.9587531089782715
+Proper Noun Data,iphone,iPhone,iPhone,,iPhone,,proper_noun_normalization,True,0,2.169950008392334
+Proper Noun Data,ipad,iPad,iPad,,iPad,,proper_noun_normalization,True,0,1.0442888736724854
+Proper Noun Data,macbook,MacBook,MacBook,,MacBook,,proper_noun_normalization,True,0,0.9264230728149414
+Proper Noun Data,macos,macOS,macOS,,macOS,,proper_noun_normalization,True,0,0.8453061580657959
+Proper Noun Data,ios,iOS,iOS,,iOS,,proper_noun_normalization,True,0,0.8806872367858887
+Proper Noun Data,youtube,YouTube,YouTube,,YouTube,,proper_noun_normalization,True,0,1.181617259979248
+Proper Noun Data,google,Google,Google,,Google,,proper_noun_normalization,True,0,1.104970932006836
+Proper Noun Data,microsoft,Microsoft,Microsoft,,Microsoft,,proper_noun_normalization,True,0,1.1260061264038086
+Proper Noun Data,windows,Windows,Windows,,Windows,,proper_noun_normalization,True,0,0.7426469326019287
+Proper Noun Data,facebook,Facebook,Facebook,,Facebook,,proper_noun_normalization,True,0,1.7148401737213135
+Proper Noun Data,instagram,Instagram,Instagram,,Instagram,,proper_noun_normalization,True,0,0.8115880489349365
+Proper Noun Data,twitter,Twitter,Twitter,,Twitter,,proper_noun_normalization,True,0,0.7686059474945068
+Proper Noun Data,linkedin,LinkedIn,LinkedIn,,LinkedIn,,proper_noun_normalization,True,0,0.8789620399475098
+Proper Noun Data,amazon,Amazon,Amazon,,Amazon,,proper_noun_normalization,True,0,1.0526931285858154
+Proper Noun Data,android,Android,Android,,Android,,proper_noun_normalization,True,0,0.920194149017334
+Proper Noun Data,linux,Linux,Linux,,Linux,,proper_noun_normalization,True,0,1.2913551330566406
+Proper Noun Data,javascript,JavaScript,JavaScript,,JavaScript,,proper_noun_normalization,True,0,2.3239290714263916
+Proper Noun Data,typescript,TypeScript,TypeScript,,TypeScript,,proper_noun_normalization,True,0,0.8603720664978027
+Proper Noun Data,python,Python,Python,,Python,,proper_noun_normalization,True,0,1.0750038623809814
+Proper Noun Data,mysql,MySQL,MySQL,,MySQL,,proper_noun_normalization,True,0,1.625972032546997
+Proper Noun Data,postgresql,PostgreSQL,PostgreSQL,,PostgreSQL,,proper_noun_normalization,True,0,0.8228321075439453
+Proper Noun Data,mongodb,MongoDB,MongoDB,,MongoDB,,proper_noun_normalization,True,0,1.226248025894165

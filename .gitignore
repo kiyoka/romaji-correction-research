@@ -15,8 +15,6 @@ __pycache__/
 .env
 
 # Results
-results/
-*.csv
 *.log
 CLAUDE.md
 .\#CLAUDE.md

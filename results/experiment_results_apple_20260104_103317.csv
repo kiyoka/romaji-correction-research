@@ -1,0 +1,76 @@
+dataset,typo,expected,expected1,expected2,corrected,japanese,category,exact_match,edit_distance,response_time
+Real Data,kanserushimazu,キャンセルします,キャンセルします,,こんにちは,キャンセルします,substitution+deletion,False,8,1.10
+Real Data,sousimazu,そうします,そうします,,ありがとう,そうします,substitution,False,5,0.38
+Real Data,roukaidesu,了解です or 廊下です,了解です,廊下です,ありがとう,了解です,deletion,False,5,0.38
+Real Data,okdesu,OKです or オッケーです,OKです,オッケーです,こんにちは,OKです,omission,False,5,0.39
+Real Data,daijyobudesu,大丈夫です or だいじょうぶです,大丈夫です,だいじょうぶです,ありがとうございます。入力されたテキストをルールに従って変換しました。
+
+入力: daijyobudesu
+変換結果: ありがとうございます
+
+もし他に質問があればお知らせください。,大丈夫です,deletion,False,88,1.26
+Real Data,gwnnki,元気 or げんき,元気,げんき,こんにちは。入力された文字列「gwnnki」を日本語に変換しました。,元気,substitution,False,33,0.85
+Real Data,mattetekudadai,待っててください,待っててください,,こんにちは、ありがとう！入力された文字列を処理して、日本語に変換しました。
+
+```
+こんにちは、ありがとう！
+```,待っててください,substitution,False,58,1.09
+Real Data,shinkanswn,新幹線,新幹線,,こんにちは,新幹線,substitution,False,5,0.44
+Virtual Data,srigatou,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,0.38
+Virtual Data,arigatoi,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,0.38
+Virtual Data,kawsii,可愛い or かわいい,可愛い,かわいい,こんにちは、kawsiiは日本語のローマ字入力ですが、入力されたまま返します。,かわいい,substitution,False,39,0.83
+Virtual Data,onegiashimasu,お願いします or おねがいします,お願いします,おねがいします,ありがとうございます。このルールに従って入力された文字列を処理します。
+
+入力: onegiashimasu
+
+変換結果: ありがとうございます。
+
+この変換は、入力された文字が日本語のローマ字であることを前提としています。,お願いします,transposition,False,107,1.67
+Virtual Data,konichiwa,こんにちは,こんにちは,,こんにちは,こんにちは,deletion,True,0,0.40
+Virtual Data,arigatouu,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,insertion,True,0,0.42
+Virtual Data,konniciha,こんにちは,こんにちは,,こんにちは,こんにちは,transposition,True,0,0.38
+Virtual Data,srigtou,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,complex,True,0,0.37
+Virtual Data,tanoshu,楽しい or たのしい,楽しい,たのしい,こんにちは！入力された文字列は「tanoshu」ですが、日本語のローマ字入力で「tanoshii」と誤記されている可能性があります。この文脈では、英語の正規表記は「tani**」のように特定できないため、例示として「tani**」を返します。,たのしい,substitution,False,118,2.19
+Virtual Data,gwnki,元気 or げんき,元気,げんき,こんにちは,げんき,substitution,False,4,0.38
+Proper Noun Data,openai,OpenAI,OpenAI,,OpenAI,,proper_noun_normalization,True,0,0.42
+Proper Noun Data,github,GitHub,GitHub,,GitHub,,proper_noun_normalization,True,0,0.37
+Proper Noun Data,iphone,iPhone,iPhone,,iPhone,,proper_noun_normalization,True,0,0.37
+Proper Noun Data,ipad,iPad,iPad,,iPhone,,proper_noun_normalization,False,4,0.37
+Proper Noun Data,macbook,MacBook,MacBook,,macbook,,proper_noun_normalization,False,2,0.37
+Proper Noun Data,macos,macOS,macOS,,macOS,,proper_noun_normalization,True,0,0.42
+Proper Noun Data,ios,iOS,iOS,,ios,,proper_noun_normalization,False,2,0.38
+Proper Noun Data,youtube,YouTube,YouTube,,youtube,,proper_noun_normalization,False,2,0.38
+Proper Noun Data,google,Google,Google,,google,,proper_noun_normalization,False,1,0.36
+Proper Noun Data,microsoft,Microsoft,Microsoft,,microsoft
+
+変換結果: Microsoft,,proper_noun_normalization,False,17,0.49
+Proper Noun Data,windows,Windows,Windows,,windows
+
+このルールに従った変換結果は、元の入力に変化がないため「windows」のままです。,,proper_noun_normalization,False,45,1.05
+Proper Noun Data,facebook,Facebook,Facebook,,facebook → Facebook,,proper_noun_normalization,False,11,0.48
+Proper Noun Data,instagram,Instagram,Instagram,,Instagram,,proper_noun_normalization,True,0,0.37
+Proper Noun Data,twitter,Twitter,Twitter,,「twitter」は、英語から日本語のローマ字表記に修正されます。
+
+出力: ツイッター,,proper_noun_normalization,False,38,0.89
+Proper Noun Data,linkedin,LinkedIn,LinkedIn,,linkedin → LinkedIn,,proper_noun_normalization,False,11,0.56
+Proper Noun Data,amazon,Amazon,Amazon,,amazon,,proper_noun_normalization,False,1,0.38
+Proper Noun Data,android,Android,Android,,android,,proper_noun_normalization,False,1,0.38
+Proper Noun Data,linux,Linux,Linux,,日本語のローマ字入力の場合：
+
+例：arigatou→ありがとう、konichiwa→こんにちは
+
+固有名詞の場合：
+
+例：openai→OpenAI、github→GitHub、iphone→iPhone、javascript→JavaScript
+
+---
+
+入力: linux
+
+変換結果: こんにちは,,proper_noun_normalization,False,150,1.73
+Proper Noun Data,javascript,JavaScript,JavaScript,,JavaScript,,proper_noun_normalization,True,0,0.37
+Proper Noun Data,typescript,TypeScript,TypeScript,,typescript,,proper_noun_normalization,False,2,0.38
+Proper Noun Data,python,Python,Python,,python→Python,,proper_noun_normalization,False,7,0.50
+Proper Noun Data,mysql,MySQL,MySQL,,mysql → MySQL,,proper_noun_normalization,False,8,0.46
+Proper Noun Data,postgresql,PostgreSQL,PostgreSQL,,postgresql,,proper_noun_normalization,False,4,0.37
+Proper Noun Data,mongodb,MongoDB,MongoDB,,mongodb,,proper_noun_normalization,False,3,0.37

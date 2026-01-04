@@ -15,26 +15,23 @@ import FoundationModels
 @available(macOS 26.0, *)
 actor TypoCorrectionService {
     private let promptTemplate: String
-    private let session: LanguageModelSession?
+    private let isAvailable: Bool
 
     init(promptTemplate: String) {
         self.promptTemplate = promptTemplate
-
         // Check if the Foundation Models framework is available on this device
-        guard SystemLanguageModel.default.isAvailable else {
-            self.session = nil
-            return
-        }
-
-        // Initialize the session
-        self.session = LanguageModelSession()
+        self.isAvailable = SystemLanguageModel.default.isAvailable
     }
 
     /// Correct a typo using Apple's on-device Foundation Model
+    /// Creates a new session for each request to avoid context accumulation
     func correctTypo(_ typo: String) async throws -> (corrected: String, responseTime: TimeInterval) {
-        guard let session = session else {
+        guard isAvailable else {
             throw TypoCorrectionError.frameworkNotAvailable
         }
+
+        // Create a new session for each request to prevent context window overflow
+        let session = LanguageModelSession()
 
         let startTime = Date()
 
