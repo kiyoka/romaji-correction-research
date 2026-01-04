@@ -318,6 +318,10 @@
 - **Virtual Data**: 6/10 (60.0%)
 - **Proper Noun Data**: 6/24 (25.0%)
 
+![GPT-5.2 vs Apple Intelligence (3B) - データセット別正解率比較](graph/model_comparison.png)
+
+**図: データセット別正解率比較グラフ** - GPT-5.2（緑）とApple Intelligence 3B（青）の性能差を視覚化
+
 ### GPT-5.2との比較
 
 | 指標 | GPT-5.2 | Apple Intelligence (3B) | 差分 |

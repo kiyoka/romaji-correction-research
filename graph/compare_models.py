@@ -37,7 +37,7 @@ ax.set_title('ローマ字タイプミス修正ベンチマーク: モデル別�
              fontsize=16, fontweight='bold', pad=20)
 ax.set_xticks(x)
 ax.set_xticklabels(datasets)
-ax.legend(fontsize=12, loc='upper right')
+ax.legend(fontsize=12, loc='upper left')
 ax.set_ylim(0, 110)
 
 # グリッド追加
