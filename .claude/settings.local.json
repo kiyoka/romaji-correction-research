@@ -9,7 +9,15 @@
       "Bash(tree:*)",
       "WebFetch(domain:platform.openai.com)",
       "WebFetch(domain:cookbook.openai.com)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(swift build:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(swift run:*)",
+      "Bash(pkill:*)",
+      "Bash(sw_vers:*)",
+      "WebFetch(domain:www.createwithswift.com)",
+      "WebFetch(domain:azamsharp.com)",
+      "WebFetch(domain:swiftwithmajid.com)"
     ]
   }
 }
