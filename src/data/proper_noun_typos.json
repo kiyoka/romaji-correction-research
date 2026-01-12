@@ -262,5 +262,49 @@
     "description": "データベース名",
     "subcategory": "データベース",
     "source": "virtual"
+  },
+  {
+    "id": 25,
+    "typo": "apple intelligence",
+    "correct1": "Apple Intelligence",
+    "correct2": "",
+    "japanese": "",
+    "category": "proper_noun_normalization",
+    "description": "AI機能名の正規表記",
+    "subcategory": "Apple製品",
+    "source": "virtual"
+  },
+  {
+    "id": 26,
+    "typo": "apple intelligenceban",
+    "correct1": "Apple Intelligence版",
+    "correct2": "",
+    "japanese": "",
+    "category": "proper_noun_normalization_with_typo",
+    "description": "AI機能名の正規表記（タイポあり：版→ban）",
+    "subcategory": "Apple製品",
+    "source": "virtual"
+  },
+  {
+    "id": 27,
+    "typo": "chatgpt",
+    "correct1": "ChatGPT",
+    "correct2": "",
+    "japanese": "",
+    "category": "proper_noun_normalization",
+    "description": "AI製品名の正規表記",
+    "subcategory": "OpenAI製品",
+    "source": "virtual"
+  },
+  {
+    "id": 28,
+    "typo": "claude",
+    "correct1": "Claude",
+    "correct2": "",
+    "japanese": "",
+    "category": "proper_noun_normalization",
+    "description": "AI製品名の正規表記",
+    "subcategory": "Anthropic製品",
+    "source": "virtual"
   }
 ]

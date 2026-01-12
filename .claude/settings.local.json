@@ -17,7 +17,8 @@
       "Bash(sw_vers:*)",
       "WebFetch(domain:www.createwithswift.com)",
       "WebFetch(domain:azamsharp.com)",
-      "WebFetch(domain:swiftwithmajid.com)"
+      "WebFetch(domain:swiftwithmajid.com)",
+      "Bash(python:*)"
     ]
   }
 }

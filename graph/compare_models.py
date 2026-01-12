@@ -2,7 +2,12 @@
 """
 データセット別の正解率比較グラフを生成するスクリプト
 
-GPT-5.2とApple Intelligence (3B)の性能を比較する棒グラフを作成します。
+GPT-5.2とApple Intelligence V6 (3B) [データリーク修正後]の性能を比較する棒グラフを作成します。
+
+データリーク問題:
+初期実験ではプロンプトのexamplesにテストデータと同じ内容を含めており、
+モデルが「答え」を既に知っている状態でテストされていました。
+修正後は、テストデータと重複しないexamplesを使用しています。
 """
 
 import matplotlib.pyplot as plt
@@ -12,10 +17,11 @@ import numpy as np
 plt.rcParams['font.family'] = ['Arial Unicode MS', 'Hiragino Sans', 'DejaVu Sans']
 plt.rcParams['font.size'] = 12
 
-# データ（正解率）
-datasets = ['Real Data\n(8件)', 'Virtual Data\n(10件)', 'Proper Noun\n(24件)', 'Overall\n(42件)']
+# データ（正解率）- データリーク修正後
+datasets = ['Real Data\n(8件)', 'Virtual Data\n(9件)', 'Proper Noun\n(28件)', 'Overall\n(45件)']
 gpt52_scores = [87.5, 100.0, 100.0, 97.62]
-apple_ai_scores = [0.0, 60.0, 25.0, 28.57]
+# Apple Intelligence V6 (データリーク修正後): 12.5%, 55.6%, 53.6%, 46.67%
+apple_ai_scores = [12.5, 55.6, 53.6, 46.67]
 
 # グラフの位置設定
 x = np.arange(len(datasets))
@@ -27,13 +33,13 @@ fig, ax = plt.subplots(figsize=(12, 7))
 # 棒グラフ描画（正解率）
 bars1 = ax.bar(x - width/2, gpt52_scores, width, label='GPT-5.2',
                color='#4CAF50', alpha=0.8, edgecolor='black', linewidth=1.2)
-bars2 = ax.bar(x + width/2, apple_ai_scores, width, label='Apple Intelligence (3B)',
+bars2 = ax.bar(x + width/2, apple_ai_scores, width, label='Apple Intelligence V6 (3B) [修正後]',
                color='#2196F3', alpha=0.8, edgecolor='black', linewidth=1.2)
 
 # ラベルとタイトル
 ax.set_xlabel('データセット', fontsize=14, fontweight='bold')
 ax.set_ylabel('正解率 (%)', fontsize=14, fontweight='bold')
-ax.set_title('ローマ字タイプミス修正ベンチマーク: モデル別正解率比較\nGPT-5.2 vs Apple Intelligence (3B)',
+ax.set_title('ローマ字タイプミス修正ベンチマーク: モデル別正解率比較\nGPT-5.2 vs Apple Intelligence (3B) V6 [データリーク修正後]',
              fontsize=16, fontweight='bold', pad=20)
 ax.set_xticks(x)
 ax.set_xticklabels(datasets)

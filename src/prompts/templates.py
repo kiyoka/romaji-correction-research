@@ -73,8 +73,93 @@ PROPER_NOUN_AWARE_V3_PROMPT = """入力を以下のように処理：
 入力: {typo}
 出力:"""
 
-# Default prompt to use
-DEFAULT_PROMPT = PROPER_NOUN_AWARE_V2_PROMPT
+# Proper noun aware prompt V4 - strict output format with few-shot examples
+PROPER_NOUN_AWARE_V4_PROMPT = """入力されたテキストを処理してください。日本語のローマ字は日本語に変換し、企業名・ブランド名・製品名などの固有名詞は正規の英語表記に修正してください。
+
+重要：結果のみを1行で出力してください。説明や追加情報は一切不要です。
+
+例：
+入力: sumimasen → 出力: すみません
+入力: ohayou → 出力: おはよう
+入力: gomenasai → 出力: ごめんなさい
+入力: netflix → 出力: Netflix
+入力: spotify → 出力: Spotify
+入力: slack → 出力: Slack
+
+入力: {typo}
+出力:"""
+
+# Proper noun aware prompt V5 - XML-like structure for clarity
+PROPER_NOUN_AWARE_V5_PROMPT = """<task>
+以下の入力を処理してください：
+- 日本語のローマ字表記の場合：日本語（漢字仮名交じり）に変換
+- 英語の固有名詞（企業名・ブランド名・製品名・サービス名など）の場合：正規の英語表記に修正
+- タイポを含む場合：修正した上で適切に処理
+</task>
+
+<examples>
+sumimasen → すみません
+ohayou → おはよう
+gomenasai → ごめんなさい
+netflix → Netflix
+spotify → Spotify
+slack → Slack
+zoom → Zoom
+</examples>
+
+<critical>
+必ず結果のみを出力してください。説明や追加のテキストは絶対に含めないでください。
+</critical>
+
+<input>{typo}</input>
+<output>"""
+
+# Proper noun aware prompt V6 - Enhanced with QWERTY keyboard typo awareness
+PROPER_NOUN_AWARE_V6_PROMPT = """<task>
+以下の入力を処理してください：
+1. 日本語のローマ字表記（タイポを含む可能性あり）：タイポを修正して日本語（漢字仮名交じり）に変換
+2. 英語の固有名詞：正規の英語表記に修正
+3. タイポを含む場合：QWERTYキーボード配列を考慮して修正
+</task>
+
+<qwerty_typo_patterns>
+スマートフォンのQWERTYキーボードで発生しやすいタイポパターン：
+- 隣接キーの置換: a↔s, e↔w, i↔o, u↔y, n↔m など
+- 文字の脱落: 文字抜け (konichiwa → konnichiwa)
+- 文字の挿入: 重複 (arigatouu → arigatou)
+- 文字順序の入れ替え: 転置 (konniciha → konnichiwa)
+</qwerty_typo_patterns>
+
+<examples>
+日本語ローマ字（タイポあり）:
+sumimasen → すみません
+sumimsen → すみません (a 脱落)
+ohayou → おはよう
+phayou → おはよう (o→p 置換)
+oyasumi → おやすみ
+gyasumi → おやすみ (o→g 置換)
+gomenasai → ごめんなさい
+gomwnasai → ごめんなさい (e→w 置換)
+
+英語固有名詞:
+netflix → Netflix
+spotify → Spotify
+slack → Slack
+zoom → Zoom
+notion → Notion
+figma → Figma
+</examples>
+
+<critical>
+必ず結果のみを出力してください。説明や追加のテキストは絶対に含めないでください。
+常に日本語ローマ字としての解釈を優先し、ランダムな英単語への変換は避けてください。
+</critical>
+
+<input>{typo}</input>
+<output>"""
+
+# Default prompt to use (V6 with enhanced QWERTY keyboard typo awareness)
+DEFAULT_PROMPT = PROPER_NOUN_AWARE_V6_PROMPT
 
 # All prompts for comparison
 ALL_PROMPTS = {
@@ -87,4 +172,7 @@ ALL_PROMPTS = {
     "PROPER_NOUN_AWARE": PROPER_NOUN_AWARE_PROMPT,
     "PROPER_NOUN_AWARE_V2": PROPER_NOUN_AWARE_V2_PROMPT,
     "PROPER_NOUN_AWARE_V3": PROPER_NOUN_AWARE_V3_PROMPT,
+    "PROPER_NOUN_AWARE_V4": PROPER_NOUN_AWARE_V4_PROMPT,
+    "PROPER_NOUN_AWARE_V5": PROPER_NOUN_AWARE_V5_PROMPT,
+    "PROPER_NOUN_AWARE_V6": PROPER_NOUN_AWARE_V6_PROMPT,
 }
