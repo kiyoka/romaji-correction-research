@@ -1,11 +1,13 @@
 # 引き継ぎ: macOS 27 での Foundation Models 再測定
 
+> **実施済み（2026-09-19）:** macOS 27.0で同条件の46件を2回測定し、いずれも31/46（67.39%）だった。結果ファイルと比較・注意点は [RESULT.md の追加計測](RESULT.md#macos-270での追加計測2026-09-19) を参照。この記事は現在 `japanese-input-method-sumibi-25.md` で、未公開のまま。以下には測定前に作成した手順も残している。
+
 作成日: 2026-09-16 / 作成環境: Windows(WSL)側のセッション
 実行担当: macOS 27 にアップデート済みの MacBook Air (M4, 24GB)
 
 ## 目的
 
-Zenn記事 `japanese-input-method-sumibi-24.md`（iOS 27 の Foundation Models を扱う回、
+Zenn記事 `japanese-input-method-sumibi-25.md`（iOS 27 の Foundation Models を扱う回、
 `published: false` で保留中）を公開するために、**オンデバイス3Bモデルのローマ字タイプミス
 修正性能を macOS 27 世代で測り直す**。
 
@@ -38,7 +40,7 @@ swift run --package-path swift-benchmark
 
 実行条件（前回と揃えるため**変更しないこと**）:
 - テストデータ: `src/data/` の3セット計46件（real_typos 8 / virtual_typos 10 / proper_noun_typos 28）
-- プロンプト: `PROPER_NOUN_AWARE_V2`（`Utils/PromptTemplates.swift`、`RomajiCorrectionBenchmark.swift` で指定）
+- プロンプト: `PROPER_NOUN_AWARE_V6_ENGLISH`（`Utils/PromptTemplates.swift` の `default`。前回のmacOS 26.2と同じ）
 - 指標: 完全一致率 / 平均編集距離 / 平均応答時間
 
 出力:
@@ -90,14 +92,14 @@ macOS 27 で Foundation Models の API が変わっている。落ちるとし�
   Apple Intelligence 非対応。PCC だけを使う抜け道もない（PCC は対応端末のあふれを受ける仕組みで、
   非対応端末では `availability` が `.deviceNotEligible` を返すだけ）。
 
-## 測定後の作業（Windows側セッションで実施）
+## 測定後の作業（当初の想定）
 
-1. 数値を `articles/japanese-input-method-sumibi-24.md` に反映
+1. 数値を `articles/japanese-input-method-sumibi-25.md` に反映
 2. 「これから確かめること」「検証できるもの、できないもの」の2節を実測値ベースに書き直す
-3. `published: true` にして公開
+3. 実機未検証の範囲を明記して公開可否を判断する（現時点では `published: false`）
 
 ## 関連リポジトリ
 
-- 記事: `zenn-content` (`articles/japanese-input-method-sumibi-24.md`)
+- 記事: `zenn-content` (`articles/japanese-input-method-sumibi-25.md`)
 - 実装: `kiyoka/Sumibi-iOS`
 - 本ベンチ: `kiyoka/romaji-correction-research`

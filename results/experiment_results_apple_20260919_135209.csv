@@ -1,0 +1,47 @@
+dataset,typo,expected,expected1,expected2,corrected,japanese,category,exact_match,edit_distance,response_time
+Real Data,kanserushimazu,キャンセルします,キャンセルします,,がんしまず,キャンセルします,substitution+deletion,False,6,1.78
+Real Data,sousimazu,そうします,そうします,,すみません,そうします,substitution,False,5,0.68
+Real Data,roukaidesu,了解です or 廊下です,了解です,廊下です,よろしくお願いします,了解です,deletion,False,9,0.72
+Real Data,okdesu,OKです or オッケーです,OKです,オッケーです,お客です,OKです,omission,False,2,0.81
+Real Data,daijyobudesu,大丈夫です or だいじょうぶです,大丈夫です,だいじょうぶです,大丈夫です,大丈夫です,deletion,True,0,0.74
+Real Data,gwnnki,元気 or げんき,元気,げんき,ごめん,元気,substitution,False,3,0.84
+Real Data,mattetekudadai,待っててください,待っててください,,待ちてくだい,待っててください,substitution,False,3,0.89
+Real Data,shinkanswn,新幹線,新幹線,,新幹線,新幹線,substitution,True,0,0.78
+Virtual Data,srigatou,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,0.67
+Virtual Data,arigatoi,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,substitution,True,0,0.71
+Virtual Data,kawsii,可愛い or かわいい,可愛い,かわいい,かわいい,かわいい,substitution,True,0,0.68
+Virtual Data,onegiashimasu,お願いします or おねがいします,お願いします,おねがいします,お願いします,お願いします,transposition,True,0,0.69
+Virtual Data,konichiwa,こんにちは,こんにちは,,こんにちは,こんにちは,deletion,True,0,0.68
+Virtual Data,arigatouu,有難う or ありがとう,有難う,ありがとう,ありがとう,ありがとう,insertion,True,0,0.68
+Virtual Data,konniciha,こんにちは,こんにちは,,こんにちは,こんにちは,transposition,True,0,0.71
+Virtual Data,srigtou,有難う or ありがとう,有難う,ありがとう,おはよう,ありがとう,complex,False,3,0.68
+Virtual Data,tanoshu,楽しい or たのしい,楽しい,たのしい,楽しい,たのしい,substitution,True,0,0.67
+Virtual Data,gwnki,元気 or げんき,元気,げんき,ごめんなさい,げんき,substitution,False,5,0.77
+Proper Noun Data,openai,OpenAI,OpenAI,,OpenAI,,proper_noun_normalization,True,0,0.76
+Proper Noun Data,github,GitHub,GitHub,,GitHub,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,iphone,iPhone,iPhone,,iPhone,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,ipad,iPad,iPad,,iPad,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,macbook,MacBook,MacBook,,MacBook,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,macos,macOS,macOS,,macOS,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,ios,iOS,iOS,,iOS,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,youtube,YouTube,YouTube,,YouTube,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,google,Google,Google,,Google,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,microsoft,Microsoft,Microsoft,,Microsoft,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,windows,Windows,Windows,,Windows,,proper_noun_normalization,True,0,0.67
+Proper Noun Data,facebook,Facebook,Facebook,,Facebook,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,instagram,Instagram,Instagram,,Instagram,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,twitter,Twitter,Twitter,,Twitter,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,linkedin,LinkedIn,LinkedIn,,LinkedIn,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,amazon,Amazon,Amazon,,Amazon,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,android,Android,Android,,アンドロイド,,proper_noun_normalization,False,7,0.77
+Proper Noun Data,linux,Linux,Linux,,Linux,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,javascript,JavaScript,JavaScript,,javascript,,proper_noun_normalization,False,2,0.71
+Proper Noun Data,typescript,TypeScript,TypeScript,,typescript,,proper_noun_normalization,False,2,0.72
+Proper Noun Data,python,Python,Python,,すみません,,proper_noun_normalization,False,6,0.71
+Proper Noun Data,mysql,MySQL,MySQL,,データベース,,proper_noun_normalization,False,6,0.71
+Proper Noun Data,postgresql,PostgreSQL,PostgreSQL,,PostgreSQL,,proper_noun_normalization,True,0,0.78
+Proper Noun Data,mongodb,MongoDB,MongoDB,,MongoDB,,proper_noun_normalization,True,0,0.71
+Proper Noun Data,apple intelligence,Apple Intelligence,Apple Intelligence,,Apple Intelligence,,proper_noun_normalization,True,0,0.77
+Proper Noun Data,apple intelligenceban,Apple Intelligence版,Apple Intelligence版,,apple intelligenceban,,proper_noun_normalization_with_typo,False,5,0.71
+Proper Noun Data,chatgpt,ChatGPT,ChatGPT,,ChatGPT,,proper_noun_normalization,True,0,0.70
+Proper Noun Data,claude,Claude,Claude,,claude,,proper_noun_normalization,False,1,0.70

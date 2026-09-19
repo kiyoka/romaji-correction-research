@@ -9,7 +9,7 @@
 ## 必要要件
 
 ### システム要件
-- **macOS 26** 以降（2025年9月15日正式リリース、現在はmacOS 26.2が最新版）
+- **macOS 26** 以降（macOS 27.0でも実行済み）
 - **Apple Silicon (M-series)** プロセッサ必須
 - **Xcode 26+** （Swift 6.2以降）
 - **Apple Intelligence** がシステム設定で有効化されていること
@@ -20,11 +20,9 @@ AppleはWWDC 2025（2025年6月9日）でFoundation Models frameworkを発表し
 - オンデバイスの3Bパラメータモデルへの直接アクセスを提供
 - 完全にプライバシー保護（オンデバイス処理）
 - オフラインで動作
-- 50ms未満のレイテンシー
 - SwiftネイティブAPI
-- わずか3行のコードで利用可能
 
-**現在の最新バージョン**: macOS 26.2（2025年12月12日リリース）にて正式に利用可能です。
+macOS 27.0での追加計測結果は、リポジトリルートの `RESULT.md` と `results/experiment_results_apple_20260919_135113.csv`、`results/experiment_results_apple_20260919_135209.csv` を参照してください。
 
 ## プロジェクト構造
 
@@ -106,7 +104,7 @@ swift build -c release
 
 ## プロンプトテンプレート
 
-デフォルトで使用されるプロンプトは `PROPER_NOUN_AWARE_V2` です（Pythonベンチマークと同じ）。
+デフォルトで使用されるプロンプトは `PROPER_NOUN_AWARE_V6_ENGLISH` です。macOS 26.2と27.0の比較では、このプロンプトとコードを変更していません。
 
 他のプロンプトを使用する場合は、`RomajiCorrectionBenchmark.swift`の以下の行を変更してください：
 
@@ -117,7 +115,8 @@ let service = TypoCorrectionService(promptTemplate: PromptTemplate.default)
 利用可能なプロンプトテンプレート：
 - `PromptTemplate.simple` - シンプルなプロンプト
 - `PromptTemplate.qwertyAware` - QWERTYキーボード認識プロンプト
-- `PromptTemplate.properNounAwareV2` - 固有名詞対応プロンプト（デフォルト）
+- `PromptTemplate.properNounAwareV2` - 固有名詞対応プロンプト（GPT-5.2の過去の測定で使用）
+- `PromptTemplate.properNounAwareV6English` - 固有名詞とQWERTYタイプミス対応（現在のデフォルト）
 
 詳細は `Utils/PromptTemplates.swift` を参照してください。
 
@@ -154,12 +153,7 @@ swift build
 
 ## Pythonベンチマークとの比較
 
-このSwiftベンチマークは、Pythonベンチマーク（`src/experiment.py`）と同じ：
-- テストデータ
-- プロンプトテンプレート
-- 評価指標（正解率、編集距離、応答時間）
-
-を使用しているため、結果を直接比較できます。
+このSwiftベンチマークは、Pythonベンチマーク（`src/experiment.py`）と同じデータファイルを読み、完全一致率・編集距離・応答時間を記録します。ただし、過去のGPT-5.2測定は42件・V2プロンプト、Appleの最新測定は46件・V6プロンプトです。**保存済みの数値同士は同一条件でのモデル比較ではありません**。
 
 **Pythonベンチマークの実行方法**:
 ```bash
@@ -173,12 +167,12 @@ python -m src.experiment
 `Services/TypoCorrectionService.swift`では、以下のようにFoundation Models frameworkを使用します：
 
 ```swift
-#if canImport(FoundationModels)
 import FoundationModels
 
-let model = LanguageModel()
-let response = try await model.generate(prompt: prompt)
-#endif
+if SystemLanguageModel.default.isAvailable {
+    let session = LanguageModelSession()
+    let response = try await session.respond(to: prompt)
+}
 ```
 
 公式ドキュメントを参照してください：

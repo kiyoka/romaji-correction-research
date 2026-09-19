@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Foundation Models Framework Integration
 // Note: This uses Apple's Foundation Models framework (announced at WWDC 2025, released September 15, 2025)
 // Requirements:
-// 1. macOS 26+ (current version: macOS 26.2)
+// 1. macOS 26+ (also measured on macOS 27.0)
 // 2. Apple Intelligence enabled in System Settings
 // 3. Xcode 26+
 // 4. Apple Silicon (M1+) or A17 Pro+ hardware
@@ -83,7 +83,7 @@ enum TypoCorrectionError: Error, LocalizedError {
             Foundation Models framework is not available on this system.
 
             Requirements:
-            - macOS 26 or later (current: macOS 26.2, released December 12, 2025)
+            - macOS 26 or later
             - Apple Intelligence enabled in System Settings
             - Xcode 26+ with Foundation Models framework support
             - Apple Silicon (M1+) or A17 Pro+ hardware

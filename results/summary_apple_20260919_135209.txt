@@ -1,0 +1,8 @@
+============================================================
+Typo Correction Experiment Summary (Apple Foundation Models)
+============================================================
+
+Total cases: 46
+Exact match rate: 67.39%
+Average edit distance: 1.41
+Average response time: 0.74s
